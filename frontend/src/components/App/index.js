@@ -1,18 +1,41 @@
 import React, { Component } from 'react';
-import logo from '../../logo.svg';
 import './index.css';
-
+import Comment from "../Comment";
+import VoteScore from '../VoteScore'
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div style={{
+        padding: '20px'
+      }}>
+        <VoteScore
+          scoreUp={() => {}}
+          scoreDown={() => {}}
+        />
+        {/*<Comment*/}
+          {/*author={'Guilherme'}*/}
+          {/*voteScore={'10'}*/}
+          {/*body={"AEEEEEEE"}*/}
+          {/*timestamp={123574418238}*/}
+        {/*/>*/}
+        {/*<Comment*/}
+          {/*author={'Guilherme'}*/}
+          {/*voteScore={'10'}*/}
+          {/*body={"AEEEEEEE"}*/}
+          {/*timestamp={123574418238}*/}
+        {/*/>*/}
+        {/*<Comment*/}
+          {/*author={'Guilherme'}*/}
+          {/*voteScore={'10'}*/}
+          {/*body={"AEEEEEEE"}*/}
+          {/*timestamp={123574418238}*/}
+        {/*/>*/}
+        {/*<Comment*/}
+          {/*author={'Guilherme'}*/}
+          {/*voteScore={'10'}*/}
+          {/*body={"AEEEEEEE"}*/}
+          {/*timestamp={123574418238}*/}
+        {/*/>*/}
       </div>
     );
   }
