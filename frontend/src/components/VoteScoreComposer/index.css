@@ -1,0 +1,12 @@
+.with-votescore {
+  display: flex;
+  flex-direction: row;
+}
+
+.with-votescore__votescore--hidden {
+
+}
+
+.with-votescore__component {
+
+}
