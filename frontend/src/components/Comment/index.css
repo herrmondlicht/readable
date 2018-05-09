@@ -1,0 +1,12 @@
+.comment__container {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 20px 0px;
+  background: #2c2f34;
+  color: #BBB;
+}
+
+.comment__container_body {
+  margin-top: 10px;
+}

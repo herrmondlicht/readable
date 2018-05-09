@@ -1,0 +1,15 @@
+.user-info {
+  font-size: .7em;
+}
+
+.user-info__author {
+  font-weight: 800;
+}
+
+.user-info__timespan {
+  margin-left: 15px;
+}
+
+.user-info__votescore {
+  margin-left: 15px;
+}
