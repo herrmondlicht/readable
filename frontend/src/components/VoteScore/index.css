@@ -13,34 +13,10 @@
   cursor: pointer;
   height: 25px;
   width: 25px;
+  transition: all 150ms ease-in-out
 }
 
 .vote-score-component__voter:hover {
-  -webkit-animation-name: wiggle;
-  -ms-animation-name: wiggle;
-  -ms-animation-duration: 800ms;
-  -webkit-animation-duration: 800ms;
-  -webkit-animation-iteration-count: 1;
-  -ms-animation-iteration-count: 1;
-  -webkit-animation-timing-function: ease-in-out;
-  -ms-animation-timing-function: ease-in-out;
-}
-
-@keyframes wiggle {
-  0% {
-    transform: rotate(10deg);
-  }
-  25% {
-    transform: rotate(-10deg);
-  }
-  50% {
-    transform: rotate(20deg);
-  }
-  75% {
-    transform: rotate(-5deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  transform: scale(1.3)
 }
 
