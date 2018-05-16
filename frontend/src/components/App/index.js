@@ -2,40 +2,30 @@ import React, { Component } from 'react';
 import './index.css';
 import Comment from "../Comment";
 import VoteScore from '../VoteScore'
+import withVoteScore from "../VoteScoreComposer";
+import PostInfo from "../Post/PostInfo";
 class App extends Component {
   render() {
     return (
       <div style={{
         padding: '20px'
       }}>
-        <VoteScore
-          scoreUp={() => {}}
-          scoreDown={() => {}}
-        />
-        {/*<Comment*/}
-          {/*author={'Guilherme'}*/}
-          {/*voteScore={'10'}*/}
-          {/*body={"AEEEEEEE"}*/}
-          {/*timestamp={123574418238}*/}
-        {/*/>*/}
-        {/*<Comment*/}
-          {/*author={'Guilherme'}*/}
-          {/*voteScore={'10'}*/}
-          {/*body={"AEEEEEEE"}*/}
-          {/*timestamp={123574418238}*/}
-        {/*/>*/}
-        {/*<Comment*/}
-          {/*author={'Guilherme'}*/}
-          {/*voteScore={'10'}*/}
-          {/*body={"AEEEEEEE"}*/}
-          {/*timestamp={123574418238}*/}
-        {/*/>*/}
-        {/*<Comment*/}
-          {/*author={'Guilherme'}*/}
-          {/*voteScore={'10'}*/}
-          {/*body={"AEEEEEEE"}*/}
-          {/*timestamp={123574418238}*/}
-        {/*/>*/}
+        {withVoteScore({ scoreUp: () => { }, scoreDown: () => { } },
+          <Comment
+            author={'Guilherme'}
+            voteScore={'10'}
+            body={"lorem ipsum"}
+            timestamp={123574418238}
+          />)}
+        <div style={{marginTop:'50px'}}>
+          <PostInfo
+            timestamp={1467166872634}
+            author={'thingtwo'}
+            category={'react'}
+            voteScore={6}
+            commentCount={2}
+          />
+        </div>
       </div>
     );
   }
