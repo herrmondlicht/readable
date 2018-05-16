@@ -14,7 +14,7 @@ describe('WithVoteScore', () => {
     const scoreUp = stub(),
       scoreDown = stub(),
       Component = () => <div>Test Component</div>,
-      ComposedComponent = WithVoteScore({scoreUp, scoreDown}, Component),
+      ComposedComponent = () => WithVoteScore({scoreUp, scoreDown}, Component),
       wrapper = shallow(ComposedComponent).withProps(),
       actual = wrapper.find('VoteScore').props(),
       expected = {
@@ -28,7 +28,7 @@ describe('WithVoteScore', () => {
     const scoreUp = stub(),
       scoreDown = stub(),
       CustomComponent = () => <div>Test Component</div>,
-      ComposedComponent =  WithVoteScore({scoreUp, scoreDown}, CustomComponent),
+      ComposedComponent = () => WithVoteScore({scoreUp, scoreDown}, <CustomComponent/>),
       wrapper = shallow(ComposedComponent).withProps(),
       actual = wrapper.find('CustomComponent').length,
       expected = 1;

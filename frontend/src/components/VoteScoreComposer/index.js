@@ -1,18 +1,17 @@
 import React from 'react';
 import VoteScore from "../VoteScore";
-
-export default ({scoreUp, scoreDown}, Component) => {
-  return () => (
+import "./index.css";
+export default ({ scoreUp, scoreDown }, Component) =>
+  (
     <div className='with-votescore'>
-      <div className='with-votescore__vote-score--hidden'>
+      <div className='with-votescore__votescore--hidden'>
         <VoteScore
           scoreUp={scoreUp}
           scoreDown={scoreDown}
         />
       </div>
       <div className='with-votescore__component'>
-        <Component/>
+        {Component}
       </div>
     </div>
   )
-}

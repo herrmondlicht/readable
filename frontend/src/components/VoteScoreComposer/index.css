@@ -4,9 +4,21 @@
 }
 
 .with-votescore__votescore--hidden {
-
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  width: 20px;
+  margin-right: 10px;
+}
+.with-votescore__component {
+  flex-grow: 1;
+  transition: all .2s;
+  transform: scale(0.99)
+}
+.with-votescore:hover .with-votescore__votescore--hidden{
+  opacity: 1 !important;
+  transform: scale(1.1)
 }
 
-.with-votescore__component {
-
+.with-votescore:hover .with-votescore__component{
+  transform: scale(1.0)
 }
