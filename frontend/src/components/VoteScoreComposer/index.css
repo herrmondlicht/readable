@@ -11,8 +11,7 @@
 }
 .with-votescore__component {
   flex-grow: 1;
-  transition: all .2s;
-  transform: scale(0.99)
+  transition: all .3s;
 }
 .with-votescore:hover .with-votescore__votescore--hidden{
   opacity: 1 !important;
@@ -20,5 +19,5 @@
 }
 
 .with-votescore:hover .with-votescore__component{
-  transform: scale(1.0)
+  box-shadow:  3px 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
