@@ -9,13 +9,22 @@ describe('PostListItem', () => {
     assert.isFunction(PostListItem)
   })
 
-  it('must render the PostListItem in its text', () => {
+  it('rendering of title text', () => {
+    const title = 'test PostListItem',
+      wrapper = shallow(PostListItem).withProps({
+        title,
+      }),
+      actual = wrapper.text()
+    assert.include(actual, title, 'must render the passed title text')
+  })
+
+  it('rendering of body text', () => {
     const body = 'test PostListItem',
       wrapper = shallow(PostListItem).withProps({
         body,
       }),
       actual = wrapper.text()
-    assert.include(actual, body, 'Could not render the PostListItem')
+    assert.include(actual, body, 'must render the passed body text')
   })
 
   it('must render a PostInfo component', () => {
