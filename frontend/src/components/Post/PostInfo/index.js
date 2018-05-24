@@ -16,8 +16,8 @@ export const createPostInfo = (React) => {
         <div className='post-info__container'>
           <span className='post-info__container_data__vote_score'>{voteScore} pts</span>
           <div className='post-info__container_data'>
+            <span className='post-info__container_data__label post-info__container_data__label--bold'>by {author}</span>
             <span className='post-info__container_data__label'>{moment(timestamp).fromNow()}</span>
-            <span className='post-info__container_data__label'>by {author}</span>
             <span className='post-info__container_data__label'>{commentCount} comments</span>
           </div>
         </div>
