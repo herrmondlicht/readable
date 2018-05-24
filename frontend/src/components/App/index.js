@@ -4,6 +4,7 @@ import Comment from "../Comment";
 import VoteScore from '../VoteScore'
 import withVoteScore from "../VoteScoreComposer";
 import PostInfo from "../Post/PostInfo";
+import PostListItem from "../Post/PostList/PostListItem";
 class App extends Component {
   render() {
     return (
@@ -17,14 +18,19 @@ class App extends Component {
             body={"lorem ipsum"}
             timestamp={123574418238}
           />)}
-        <div style={{marginTop:'50px'}}>
-          <PostInfo
-            timestamp={1467166872634}
-            author={'thingtwo'}
-            category={'react'}
-            voteScore={6}
-            commentCount={2}
-          />
+
+        <div style={{ marginTop: '50px' }}>
+          {withVoteScore({ scoreUp: () => { }, scoreDown: () => { } },
+            <PostListItem
+              timestamp={1467166872634}
+              author={'thingtwo'}
+              category={'react'}
+              voteScore={6}
+              commentCount={2}
+              body={'testing'}
+              title={'Testing the title'}
+            />)}
+
         </div>
       </div>
     );
