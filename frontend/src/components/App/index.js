@@ -20,17 +20,18 @@ class App extends Component {
           />)}
 
         <div style={{ marginTop: '50px' }}>
-          {withVoteScore({ scoreUp: () => { }, scoreDown: () => { } },
-            <PostListItem
-              timestamp={1467166872634}
-              author={'thingtwo'}
-              category={'react'}
-              voteScore={6}
-              commentCount={2}
-              body={'testing'}
-              title={'Testing the title'}
-            />)}
-
+          <PostListItem
+            post={{
+              timestamp: 1467166872634,
+              author: 'thingtwo',
+              category: 'react',
+              voteScore: 6,
+              commentCount: 2,
+              body: 'testing',
+              title: 'Testing the title',
+              id:123,
+            }}
+          />
         </div>
       </div>
     );
