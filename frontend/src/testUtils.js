@@ -5,14 +5,10 @@ import { PropTypes } from "prop-types";
 
 configure({ adapter: new Adapter() });
 
-export const shallow = (ReactComponent) => {
-  return {
+export const shallow = (ReactComponent) => ({
     withProps: (props) => enzymeShallow(<ReactComponent  {...props} />)
-  }
-}
+  })
 
-export const mount = (ReactComponent) => {
-  return {
+export const mount = (ReactComponent) => ({
     withProps: (props) => enzymeMount(<ReactComponent  {...props} />),
-  }
-}
+})
