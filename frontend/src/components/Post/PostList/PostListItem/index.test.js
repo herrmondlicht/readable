@@ -5,13 +5,14 @@ import { shallow } from "../../../../testUtils";
 describe('PostListItem', () => {
   const PostListItem = createPostListItem(React)
 
-  it('must render', () => {
-    assert.isFunction(PostListItem)
+  const renderWithRequired = (props) => shallow(PostListItem).withProps({
+    post: {
+      id: 123, ...props,
+    }
   })
-
   it('rendering of title text', () => {
     const title = 'test PostListItem',
-      wrapper = shallow(PostListItem).withProps({
+      wrapper = renderWithRequired({
         title,
       }),
       actual = wrapper.text()
@@ -20,7 +21,7 @@ describe('PostListItem', () => {
 
   it('rendering of body text', () => {
     const body = 'test PostListItem',
-      wrapper = shallow(PostListItem).withProps({
+      wrapper = renderWithRequired({
         body,
       }),
       actual = wrapper.text()
@@ -28,18 +29,23 @@ describe('PostListItem', () => {
   })
 
   it('must render a PostInfo component', () => {
-    const props = {
+    const post = {
       body: 'test PostListItem',
       author: 'Joshua Down',
       voteScore: -10,
       timestamp: 1525205449912,
       category: 'category1',
       commentCount: 25,
+      id: 123,
     },
-      wrapper = shallow(PostListItem).withProps(props),
-      actual = wrapper.find('PostInfo').props()
+      wrapper = shallow(PostListItem).withProps({ post }),
+      actual = wrapper.find('PostInfo').props(),
+      expected = {
+        ...post,
+        postId: post.id,
+      }
 
-    assert.deepInclude(props, actual, 'Could not render a PostInfo')
+    assert.deepInclude(expected, actual, 'Could not render a PostInfo')
   })
 
 })

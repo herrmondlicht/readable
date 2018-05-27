@@ -1,13 +1,14 @@
 .post-info {
   padding: 10px;
   height: 0;
-  border-bottom: 100px solid rgba(121, 67, 200, .8);
+  border-bottom: 100px solid rgb(121, 67, 200);
   border-left: 55px solid transparent;
   position: relative;
   border-radius: 5px;
   max-width: 350px;
   min-width: 250px;
   width: 100%;
+  transition: all 200ms ease-out
 }
 
 .post-info__container {
@@ -25,9 +26,9 @@
 
 .post-info__container_data {
   position: relative;
-  height: 100px;
+  height: 100%;
   width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
@@ -37,13 +38,14 @@
 .post-info__container_data__vote_score::first-line {
   font-size: 3em;
   color: #FFF;
-  flex-grow:1;
+  flex-grow: 1;
   text-align: center;
 }
+
 .post-info__container_data__vote_score {
   font-size: .9em;
   color: #FFF;
-  flex-grow:1;
+  flex-grow: 1;
   text-align: center;
 }
 
@@ -59,4 +61,11 @@
 
 .post-info__container_data__label--bold {
   font-weight: 800
+}
+
+.post-info__container_vote-score__elem--hidden {
+  flex-grow: 2;
+  height: 100%;
+  display: none;
+  align-items: center
 }

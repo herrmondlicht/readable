@@ -16,8 +16,9 @@
 
 .post-list-item__info {
   position: absolute;
-  right: -0px;
+  right: 0px;
   bottom: 0px;
+  transition: all ease-out 80ms
 }
 
 .post-list-item__content_title {
@@ -39,8 +40,27 @@
   text-overflow: ellipsis;
 }
 
+.post-list-item:hover .post-list-item__info .post-info {
+  border-bottom: 120px solid rgb(121, 67, 200);
+  border-left: 0px solid transparent;
+}
+
+.post-list-item:hover .post-info__container {
+  height: 120px;
+}
+
+.post-list-item:hover .post-info__container_vote-score__elem--hidden {
+  display: flex;
+}
+
 @media screen and (max-width:768px) {
   .post-list-item__content_body {
     display: none;
+  }
+  .post-list-item {
+    min-height: 190px
+  }
+  .post-list-item:hover .post-list-item__info {
+    transform: scale(1.0)
   }
 }
