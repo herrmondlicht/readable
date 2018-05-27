@@ -6,6 +6,7 @@
   color: #BBB;
   min-height: 120px;
   position: relative;
+  transition: 300ms ease-out
 }
 
 .post-list-item__content {
@@ -40,6 +41,7 @@
   text-overflow: ellipsis;
 }
 
+/* hovers */
 .post-list-item:hover .post-list-item__info .post-info {
   border-bottom: 120px solid rgb(121, 67, 200);
   border-left: 0px solid transparent;
@@ -52,6 +54,12 @@
 .post-list-item:hover .post-info__container_vote-score__elem--hidden {
   display: flex;
 }
+
+.post-list-item:hover {
+    box-shadow:  3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* end hovers */
 
 @media screen and (max-width:768px) {
   .post-list-item__content_body {

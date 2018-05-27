@@ -34,6 +34,7 @@ export const createPostInfo = (React) => {
               <VoteScore
                 scoreUp={this.postScoreHandler}
                 scoreDown={this.postScoreHandler}
+                arrowColor='#FFF'
               />
             </div>
           </div>
