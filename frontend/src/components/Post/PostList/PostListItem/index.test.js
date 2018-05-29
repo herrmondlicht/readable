@@ -7,7 +7,7 @@ describe('PostListItem', () => {
 
   const renderWithRequired = (props) => shallow(PostListItem).withProps({
     post: {
-      id: 123, ...props,
+      id: '123', ...props,
     }
   })
   it('rendering of title text', () => {
@@ -36,7 +36,7 @@ describe('PostListItem', () => {
       timestamp: 1525205449912,
       category: 'category1',
       commentCount: 25,
-      id: 123,
+      id: '123',
     },
       wrapper = shallow(PostListItem).withProps({ post }),
       actual = wrapper.find('PostInfo').props(),

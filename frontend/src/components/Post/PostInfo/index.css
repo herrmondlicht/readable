@@ -35,15 +35,20 @@
   flex-grow: 1;
 }
 
-.post-info__container_data__vote_score::first-line {
+.post-info__container_indicator {
+  margin: 0 5px 0 5px;
+  text-align: center
+}
+
+.post-info__container_indicator__vote_score_number {
   font-size: 3em;
   color: #FFF;
   flex-grow: 1;
   text-align: center;
 }
 
-.post-info__container_data__vote_score {
-  font-size: .9em;
+.post-info__container_indicator__vote_score {
+  font-size: 1em;
   color: #FFF;
   flex-grow: 1;
   text-align: center;

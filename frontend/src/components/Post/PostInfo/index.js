@@ -24,7 +24,12 @@ export const createPostInfo = (React) => {
       return (
         <div className='post-info'>
           <div className='post-info__container'>
-            <span className='post-info__container_data__vote_score'>{voteScore} pts</span>
+            <div className="post-info__container_indicator">
+              <div className='post-info__container_indicator__vote_score_number'>
+                {voteScore}
+              </div>
+              <div className="info__container_indicator__vote_score">pts</div>
+            </div>
             <div className='post-info__container_data'>
               <span className='post-info__container_data__label post-info__container_data__label--bold'>by {author}</span>
               <span className='post-info__container_data__label'>{moment(timestamp).fromNow()}</span>
@@ -50,7 +55,7 @@ export const createPostInfo = (React) => {
     category: string,
     voteScore: number,
     commentCount: number,
-    postId: number.isRequired,
+    postId: string.isRequired,
   }
 
   return PostInfo

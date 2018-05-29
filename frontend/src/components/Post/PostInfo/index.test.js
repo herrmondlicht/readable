@@ -7,7 +7,7 @@ import moment from 'moment';
 describe('PostInfo', () => {
   const PostInfo = createPostInfo(React)
 
-  const renderWithRequired = (props) => shallow(PostInfo).withProps({ postId: 123, ...props })
+  const renderWithRequired = (props) => shallow(PostInfo).withProps({ postId: '123', ...props })
 
   it('must be a function', () => {
     assert.isFunction(PostInfo)
