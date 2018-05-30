@@ -7,10 +7,6 @@ export const createPostList = React => {
 
   class PostList extends React.PureComponent {
 
-    getPosts = () => {
-
-    }
-
     render() {
       const { postList = [] } = this.props;
       return (

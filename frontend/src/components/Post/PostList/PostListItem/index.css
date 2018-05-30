@@ -6,7 +6,8 @@
   color: #BBB;
   min-height: 120px;
   position: relative;
-  transition: 300ms ease-out
+  transition: 300ms ease-out;
+  cursor: pointer;
 }
 
 .post-list-item__content {

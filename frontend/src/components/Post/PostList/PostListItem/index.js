@@ -2,12 +2,15 @@ import React from 'react'
 import { object } from "prop-types";
 import PostInfo from "../../PostInfo";
 import './index.css'
+import { Redirect } from 'react-router-dom'
 
 export const createPostListItem = React => {
 
   const PostListItem = ({ post: { title, body, author, timestamp, voteScore, commentCount, category, id } }) => (
     <div className="border-wrapper shadow-wrapper-weak post-list-item">
-      <div className="post-list-item__content">
+      <div
+        onClick={() => <Redirect to={`/details/${id}`} />}
+        className="post-list-item__content">
         <div className="post-list-item__content_title">
           {title}
         </div>
