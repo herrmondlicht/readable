@@ -11,11 +11,13 @@ export const createPostListItem = React => {
       <div
         onClick={() => <Redirect to={`/details/${id}`} />}
         className="border-wrapper post-list-item__content">
-        <div className="post-list-item__content_title">
-          {title}
-        </div>
-        <div className="post-list-item__content_body">
-          {body}
+        <div className="post-list-item__content_container">
+          <div className="post-list-item__content_title">
+            {title}
+          </div>
+          <div className="post-list-item__content_body">
+            {body}
+          </div>
         </div>
       </div>
       <div className="post-list-item__info">

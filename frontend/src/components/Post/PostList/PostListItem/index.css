@@ -21,10 +21,16 @@
   width: 20%;
 }
 
+.post-list-item__content_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .post-list-item__content_title {
   font-size: 1.5em;
   color: #FFF;
-  width: 100%;
+  width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -33,8 +39,7 @@
 .post-list-item__content_body {
   font-size: 1.2em;
   margin-top: 20px;
-  width: calc(100% - 250px);
-  max-width: calc(100%-250px);
+  width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
