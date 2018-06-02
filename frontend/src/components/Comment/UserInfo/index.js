@@ -14,7 +14,7 @@ export const createUserInfo = (React) => {
   )
 
   UserInfo.propTypes = {
-    voteScore: string,
+    voteScore: number,
     author: string,
     timestamp: number
   }

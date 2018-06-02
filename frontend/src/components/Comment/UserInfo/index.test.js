@@ -28,7 +28,7 @@ describe('UserInfo', () => {
   })
 
   it('render the voteScore', () => {
-    const voteScore = '10',
+    const voteScore = 10,
       wrapper = shallow(UserInfo).withProps({ voteScore }),
       actual = wrapper.text()
     assert.include(actual, voteScore, 'render() must render the votescore when passed')
