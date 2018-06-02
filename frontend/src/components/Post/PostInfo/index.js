@@ -7,11 +7,6 @@ export const createPostInfo = (React) => {
 
   class PostInfo extends React.PureComponent {
 
-    postScoreHandler = (option) => {
-      const { postId } = this.props;
-      //ToDo: Score Method
-    }
-
     render() {
 
       const {
@@ -19,8 +14,7 @@ export const createPostInfo = (React) => {
         author,
         category,
         voteScore,
-        commentCount,
-        postId } = this.props;
+        commentCount } = this.props;
       return (
         <div className='post-info'>
           <div className='post-info__container'>
@@ -49,8 +43,6 @@ export const createPostInfo = (React) => {
     category: string,
     voteScore: number,
     commentCount: number,
-    postId: string.isRequired,
-    category: string,
   }
 
   return PostInfo
