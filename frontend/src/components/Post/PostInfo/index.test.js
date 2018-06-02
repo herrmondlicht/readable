@@ -42,13 +42,4 @@ describe('PostInfo', () => {
       actual = wrapper.text()
     assert.include(actual, voteScore, 'render() must render the votescore when passed')
   })
-
-  it('rendering of VoteScore', () => {
-    const wrapper = renderWithRequired(),
-      VoteScoreProps = wrapper.find('VoteScore').props(),
-      postScoreHandler = wrapper.instance().postScoreHandler;
-
-    assert.equal(VoteScoreProps.scoreUp, postScoreHandler, 'render() must render a VoteScore with the correct scoreUp method')
-    assert.equal(VoteScoreProps.scoreDown, postScoreHandler, 'render() must render a VoteScore with the correct scoreDown method');
-  })
 })

@@ -35,13 +35,6 @@ export const createPostInfo = (React) => {
               <span className='post-info__container_data__label'>{moment(timestamp).fromNow()}</span>
               <span className='post-info__container_data__label'>{commentCount} comments</span>
             </div>
-            <div className='post-info__container_vote-score__elem--hidden'>
-              <VoteScore
-                scoreUp={this.postScoreHandler}
-                scoreDown={this.postScoreHandler}
-                arrowColor='#FFF'
-              />
-            </div>
           </div>
         </div>
       )
