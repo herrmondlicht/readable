@@ -7,10 +7,10 @@ import { Redirect } from 'react-router-dom'
 export const createPostListItem = React => {
 
   const PostListItem = ({ post: { title, body, author, timestamp, voteScore, commentCount, category, id } }) => (
-    <div className="border-wrapper shadow-wrapper-weak post-list-item">
+    <div className="shadow-wrapper-weak post-list-item">
       <div
         onClick={() => <Redirect to={`/details/${id}`} />}
-        className="post-list-item__content">
+        className="border-wrapper post-list-item__content">
         <div className="post-list-item__content_title">
           {title}
         </div>
