@@ -64,8 +64,7 @@ describe('CommentList', () => {
         voteScore: -5,
         deleted: false,
         parentDeleted: false
-      }
-      ]
+      }]
     },
       wrapper = shallow(CommentList).withProps(props);
     props.commentList.map((post, index) => {

@@ -17,7 +17,7 @@ export const createCommentList = React => {
       return (
         <div>
           {commentList.map(comment => (
-            <div key={comment.id} className="Comment-list__item">
+            <div key={comment.id} className="comment-list__item">
               {
                 withVoteScore(
                   {
