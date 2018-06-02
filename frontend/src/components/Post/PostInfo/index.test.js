@@ -36,6 +36,13 @@ describe('PostInfo', () => {
     assert.include(actual, author, 'render() must render the timestamp as fromNow date')
   })
 
+  it('rendering of category', () => {
+    const category = 'react',
+      wrapper = renderWithRequired({ category }),
+      actual = wrapper.text()
+    assert.include(actual, category, 'render() must render the timestamp as fromNow date')
+  })
+
   it('rendering of voteScore label', () => {
     const voteScore = 10,
       wrapper = renderWithRequired({ voteScore }),
