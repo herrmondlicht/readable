@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import React from 'react';
 import { createComment } from "./index";
-import { shallow } from "../../testUtils";
+import { shallow } from "../../../testUtils";
 describe('Comment', () => {
   const Comment = createComment(React)
 
@@ -22,7 +22,7 @@ describe('Comment', () => {
     const props = {
       body: 'test comment',
       author: 'Joshua Down',
-      voteScore: '-10',
+      voteScore: -10,
       timestamp: 1525205449912,
     },
       wrapper = shallow(Comment).withProps(props),

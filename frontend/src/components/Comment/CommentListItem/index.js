@@ -1,6 +1,6 @@
 import React from 'react'
 import { string, number } from "prop-types";
-import UserInfo from "./UserInfo";
+import UserInfo from "../UserInfo";
 import './index.css'
 
 export const createComment = React => {
@@ -19,7 +19,7 @@ export const createComment = React => {
     body: string,
     author: string,
     timestamp: number,
-    voteScore: string,
+    voteScore: number,
   }
 
   return Comment
