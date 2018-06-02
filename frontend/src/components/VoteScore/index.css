@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: 70px;
+  height: 100%;
 }
 
 .vote-score-component__voter {
