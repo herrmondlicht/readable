@@ -1,11 +1,11 @@
 import React from 'react'
-import { string, number } from "prop-types";
+import { object } from "prop-types";
 import UserInfo from "../UserInfo";
 import './index.css'
 
 export const createComment = React => {
 
-  const Comment = ({ body, author, timestamp, voteScore }) => (
+  const Comment = ({ comment: { body, author, timestamp, voteScore } }) => (
     <div className="border-wrapper shadow-wrapper-weak comment__container">
       <UserInfo
         author={author}
@@ -16,10 +16,7 @@ export const createComment = React => {
   )
 
   Comment.propTypes = {
-    body: string,
-    author: string,
-    timestamp: number,
-    voteScore: number,
+    comment: object.isRequired,
   }
 
   return Comment

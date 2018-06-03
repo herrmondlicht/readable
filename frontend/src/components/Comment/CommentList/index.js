@@ -1,40 +1,34 @@
 import React from 'react'
-import { string, number } from "prop-types";
-import CommentListItem from "../CommentListItem";
+import { func, array } from "prop-types";
+import _CommentListItem from "../CommentListItem";
 import './index.css'
 import withVoteScore from "../../VoteScoreComposer";
-
-export const createCommentList = React => {
+import ListWithVoteScore from '../../ListWithVoteScore'
+export const createCommentList = (React, CommentListItem) => {
 
   class CommentList extends React.PureComponent {
 
-    getVoteScoreFunction = (commentId, option) =>
-      () =>
-        this.props.voteScoreHandler && this.props.voteScoreHandler(commentId, option)
+    voteScoreFunction = (commentId, option) =>
+      this.props.voteScoreHandler && this.props.voteScoreHandler(commentId, option)
 
     render() {
       const { commentList = [] } = this.props;
       return (
         <div>
-          {commentList.map(comment => (
-            <div key={comment.id} className="comment-list__item">
-              {
-                withVoteScore(
-                  {
-                    scoreUp: this.getVoteScoreFunction(comment.id, 'upVote'),
-                    scoreDown: this.getVoteScoreFunction(comment.id, 'downVote')
-                  },
-                  <CommentListItem
-                    body={comment.body}
-                    author={comment.author}
-                    timestamp={comment.timestamp}
-                    voteScore={comment.voteScore} />)
-              }
-            </div>
-          ))}
+          <ListWithVoteScore
+            Component={CommentListItem}
+            list={commentList}
+            voteScoreHandler={this.voteScoreFunction}
+            type="comment"
+          />
         </div>
       )
     }
+  }
+
+  CommentList.propTypes = {
+    voteScoreHandler: func,
+    commentList: array,
   }
 
   return CommentList
@@ -42,4 +36,4 @@ export const createCommentList = React => {
 }
 
 
-export default createCommentList(React)
+export default createCommentList(React, _CommentListItem)
