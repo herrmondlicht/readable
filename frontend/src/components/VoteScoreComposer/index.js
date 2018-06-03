@@ -1,13 +1,13 @@
 import React from 'react';
 import VoteScore from "../VoteScore";
 import "./index.css";
-export default ({ scoreUp, scoreDown }, Component) =>
+export default ({ id, scoreHandlerFunction }, Component) =>
   (
     <div className='with-votescore'>
       <div className='with-votescore__votescore--hidden'>
         <VoteScore
-          scoreUp={scoreUp}
-          scoreDown={scoreDown}
+          id={id}
+          voteScoreHandler={scoreHandlerFunction}
         />
       </div>
       <div className='with-votescore__component'>
