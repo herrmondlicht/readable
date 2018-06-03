@@ -2,7 +2,6 @@ import React from 'react'
 import { func, array } from "prop-types";
 import _PostListItem from "./PostListItem";
 import './index.css'
-import withVoteScore from "../../VoteScoreComposer";
 import ListWithVoteScore from '../../ListWithVoteScore'
 export const createPostList = (React, PostListItem) => {
 

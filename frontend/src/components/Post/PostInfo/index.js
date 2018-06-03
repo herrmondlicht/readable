@@ -2,7 +2,6 @@ import React from 'react';
 import { string, number } from 'prop-types';
 import './index.css'
 import moment from "moment";
-import VoteScore from '../../VoteScore'
 export const createPostInfo = (React) => {
 
   class PostInfo extends React.PureComponent {

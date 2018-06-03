@@ -2,7 +2,6 @@ import React from 'react'
 import { func, array } from "prop-types";
 import _CommentListItem from "../CommentListItem";
 import './index.css'
-import withVoteScore from "../../VoteScoreComposer";
 import ListWithVoteScore from '../../ListWithVoteScore'
 export const createCommentList = (React, CommentListItem) => {
 
