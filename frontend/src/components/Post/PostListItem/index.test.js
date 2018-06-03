@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import React from 'react';
 import { createPostListItem } from "./index";
-import { shallow } from "../../../../testUtils";
+import { shallow } from "../../../testUtils";
 describe('PostListItem', () => {
   const PostListItem = createPostListItem(React)
 

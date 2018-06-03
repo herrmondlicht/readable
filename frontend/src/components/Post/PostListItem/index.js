@@ -1,6 +1,6 @@
 import React from 'react'
 import { object } from "prop-types";
-import PostInfo from "../../PostInfo";
+import PostInfo from "../PostInfo";
 import './index.css'
 import { Redirect } from 'react-router-dom'
 
