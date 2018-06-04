@@ -1,6 +1,6 @@
 import { assert } from "chai";
 import React from 'react';
-import { createListWithVoteScore } from "./index";
+import { createListWithVoteScore, TYPE_OPTIONS } from "./index";
 import { stub } from 'sinon';
 import { shallow } from "../../testUtils";
 import moment from 'moment';
@@ -15,7 +15,7 @@ describe('ListWithVoteScore', () => {
   it('rendering of VoteScores with correct params', () => {
     const Component = () => <div>Testing</div>,
       voteScoreHandler = stub(),
-      type = 'typeOfList',
+      type = TYPE_OPTIONS.post,
       props = {
         Component,
         voteScoreHandler,
@@ -60,7 +60,7 @@ describe('ListWithVoteScore', () => {
   it('rendering of the passed Component with correct params', () => {
     const Component = () => <div>Testing</div>,
       voteScoreHandler = stub(),
-      type = 'typeOfList',
+      type = TYPE_OPTIONS.comment,
       props = {
         Component,
         voteScoreHandler,
@@ -99,5 +99,16 @@ describe('ListWithVoteScore', () => {
       assert.deepEqual(actual, expected, 'render() must render the correct number of VoteScore with correct props');
     });
   });
+
+
+  it('TYPE_OPTIONS string', () => {
+    const expected = {
+      post: 'post',
+      comment: 'comment'
+    },
+    actual = TYPE_OPTIONS
+
+    assert.deepEqual(actual,expected)
+  })
 
 })

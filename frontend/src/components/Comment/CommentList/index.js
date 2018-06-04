@@ -2,7 +2,7 @@ import React from 'react'
 import { func, array } from "prop-types";
 import _CommentListItem from "../CommentListItem";
 import './index.css'
-import ListWithVoteScore from '../../ListWithVoteScore'
+import ListWithVoteScore, {TYPE_OPTIONS} from '../../ListWithVoteScore'
 export const createCommentList = (React, CommentListItem) => {
 
   class CommentList extends React.PureComponent {
@@ -18,7 +18,7 @@ export const createCommentList = (React, CommentListItem) => {
             Component={CommentListItem}
             list={commentList}
             voteScoreHandler={this.voteScoreFunction}
-            type="comment"
+            type={TYPE_OPTIONS.comment}
           />
         </div>
       )

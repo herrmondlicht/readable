@@ -2,7 +2,7 @@ import React from 'react'
 import { func, array } from "prop-types";
 import _PostListItem from "../PostListItem";
 import './index.css'
-import ListWithVoteScore from '../../ListWithVoteScore'
+import ListWithVoteScore, { TYPE_OPTIONS } from '../../ListWithVoteScore'
 export const createPostList = (React, PostListItem) => {
 
   class PostList extends React.PureComponent {
@@ -18,7 +18,7 @@ export const createPostList = (React, PostListItem) => {
             Component={PostListItem}
             list={postList}
             voteScoreHandler={this.voteScoreFunction}
-            type="post"
+            type={TYPE_OPTIONS.post}
           />
         </div>
       )

@@ -3,6 +3,11 @@ import { string, array, func } from "prop-types";
 import './index.css'
 import withVoteScore from "../VoteScoreComposer";
 
+export const TYPE_OPTIONS = {
+  post: 'post',
+  comment: 'comment'
+}
+
 export const createListWithVoteScore = React => {
 
   class ListWithVoteScore extends React.PureComponent {
@@ -19,7 +24,7 @@ export const createListWithVoteScore = React => {
                     id: listItem.id,
                     scoreHandlerFunction: voteScoreHandler,
                   },
-                  <Component {...{ [type]: listItem }} />)
+                  <Component {...{ [TYPE_OPTIONS[type]]: listItem }} />)
               }
             </div>
           ))}
