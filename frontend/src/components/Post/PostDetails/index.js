@@ -1,21 +1,31 @@
 import React from 'react'
-import { object } from "prop-types";
+import { object, array, func } from "prop-types";
 import './index.css'
 import withVoteScore from '../../VoteScoreComposer'
 import PostDetailsHeader from "./PostDetailsHeader";
+import CommentList from '../../Comment/CommentList'
 
 export const createPostDetails = React => {
 
   class PostDetails extends React.Component {
+
+    voteScoreFunction = (postId, option) =>
+      this.props.voteScoreHandler && this.props.voteScoreHandler(postId, option)
+
+    getPostComments = (id) =>
+      this.props.commentsFromPost && this.props.commentsFromPost(id)
+
+    componentDidMount = () => this.getPostComments(this.props.post.id)
+
     render() {
-      const { post } = this.props;
+      const { post, commentList = [] } = this.props;
       return (
         <div className="border-wrapper shadow-wrapper-weak post-details">
           <div className="post-details__title">
             {
               withVoteScore({
-                scoreUp: () => { },
-                scoreDown: () => { },
+                id: post.id,
+                scoreHandlerFunction: this.voteScoreFunction
               },
                 <PostDetailsHeader post={post} />
               )
@@ -25,6 +35,7 @@ export const createPostDetails = React => {
             {post.body}
           </div>
           <div className="post-details__comments">
+            <CommentList commentList={commentList} />
           </div>
         </div>
       )
@@ -34,6 +45,9 @@ export const createPostDetails = React => {
   PostDetails.propTypes = {
     match: object.isRequired,
     post: object.isRequired,
+    postComments: array,
+    commentList: array,
+    commentsFromPost: func,
   }
 
   return PostDetails
