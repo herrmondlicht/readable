@@ -2,10 +2,15 @@
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  background: #2c2f34;
+  background: #474A51;
   color: #BBB;
+  transition: all 500ms
 }
 
 .comment__container_body {
   margin-top: 10px;
+}
+
+.comment__container:hover{
+  background: #56585F
 }

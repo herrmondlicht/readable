@@ -2,7 +2,7 @@
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  background: #2c2f34;
+  background: #474A51;
   color: #BBB;
   min-height: 120px;
   position: relative;
@@ -43,6 +43,10 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.post-list-item:hover{
+  background: #56585F
 }
 
 @media screen and (max-width:768px) {
