@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
-import Comment from "../Comment";
-import withVoteScore from "../VoteScoreComposer";
-
 import PostList from "../Post/PostList";
+import CommentList from '../Comment/CommentList'
 class App extends Component {
   render() {
     const postList = {
@@ -29,23 +27,38 @@ class App extends Component {
         deleted: false,
         commentCount: 0
       }
-    }
+    },
+    commentList = [{
+      id: '894tuq4ut84ut8v4t8wun89g',
+      parentId: "8xf0y6ziyjabvozdd253nd",
+      timestamp: 1468166872634,
+      body: 'Hi there! I am a COMMENT.',
+      author: 'thingtwo',
+      voteScore: 6,
+      deleted: false,
+      parentDeleted: false
+    },
+    {
+      id: '8tu4bsun805n8un48ve89',
+      parentId: "8xf0y6ziyjabvozdd253nd",
+      timestamp: 1469479767190,
+      body: 'Comments. Are. Cool.',
+      author: 'thingone',
+      voteScore: -5,
+      deleted: false,
+      parentDeleted: false
+    }]
 
     return (
       <div style={{
         padding: '20px'
       }}>
-        {withVoteScore({ scoreUp: () => { }, scoreDown: () => { } },
-          <Comment
-            author={'Guilherme'}
-            voteScore={'10'}
-            body={"lorem ipsum"}
-            timestamp={123574418238}
-          />)}
-
         <div style={{ marginTop: '50px' }}>
           <PostList
             postList={Object.values(postList)}
+          />
+          <CommentList
+            commentList={Object.values(commentList)}
           />
         </div>
       </div>
