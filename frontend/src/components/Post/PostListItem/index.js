@@ -9,7 +9,6 @@ export const createPostListItem = React => {
   const PostListItem = ({ post: { title, body, author, timestamp, voteScore, commentCount, category, id } }) => (
     <div className="shadow-wrapper-weak post-list-item">
       <div
-        onClick={() => <Redirect to={`/details/${id}`} />}
         className="border-wrapper post-list-item__content">
         <div className="post-list-item__content_container">
           <div className="post-list-item__content_title">
