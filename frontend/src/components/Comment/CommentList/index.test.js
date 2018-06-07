@@ -31,4 +31,20 @@ describe('CommentList', () => {
     assert.deepEqual(actual, expected, "render() must render a ListWithVoteScore with correct props")
   })
 
+  it('calling of voteScoreHandler by voteScoreFunction', () => {
+    const voteScoreHandler = stub(),
+      commentId = 'commentId',
+      option = 'downVote',
+      wrapper = shallow(CommentList).withProps({
+        voteScoreHandler
+      }),
+      voteScoreFunction = wrapper.instance().voteScoreFunction,
+      expected = 'test worked'
+
+    voteScoreHandler.withArgs(commentId, option).returns(expected);
+
+    const actual = voteScoreFunction(commentId, option);
+    assert.equal(actual, expected, 'voteScoreFunction must call voteScoreHandler with correct args')
+  });
+
 })
