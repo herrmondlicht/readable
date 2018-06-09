@@ -23,16 +23,19 @@ export const createForm = React => {
     })
 
     render() {
-      const { Component, componentProps } = this.props;
-
+      const { Component, componentProps, actionCancel, actionSend } = this.props,
+      {formData} = this.state
       return (
         <div className="form-container">
           <div className="form-container__content">
-            <Component {...componentProps} updateFormData={this.updateFormData} clearForm={this.clearForm} />
+            <Component {...componentProps} formData={formData} updateFormData={this.updateFormData} clearForm={this.clearForm} />
           </div>
           <div className="form-container__bottom">
-            {/* <button onClick={}/>
-            <button onClick={}/> */}
+            <button name="sendButton" onClick={actionSend} />
+            {
+              actionCancel &&
+              <button name="cancelButton" onClick={actionCancel} />
+            }
           </div>
         </div>
       )

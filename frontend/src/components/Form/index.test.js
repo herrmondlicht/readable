@@ -7,9 +7,9 @@ describe('Form', () => {
 
   const Form = createForm(React),
     renderWithDefault = (props) => shallow(Form).withProps({
-      ...props,
       Component: () => <div></div>,
       actionSend: stub(),
+      ...props
     })
 
   it('type of Form', () => {
@@ -109,21 +109,49 @@ describe('Form', () => {
         componentProps
       }),
       updateFormData = wrapper.instance().updateFormData,
-      clearForm = wrapper.instance().clearForm
-
+      clearForm = wrapper.instance().clearForm,
+      formData = wrapper.state().formData
     const actual = wrapper.find('Component').props(),
       expected = {
         ...componentProps,
         updateFormData,
         clearForm,
+        formData
       }
 
     assert.deepEqual(actual, expected, 'render() must render the passed Component with the correct props')
 
   })
 
-  it('rendering of a actionSend button with correct props', () => {
-    
+  it("rendering of a sendButton with correct params", () => {
+    const actionSend = stub(),
+      wrapper = renderWithDefault({
+        actionSend
+      }),
+      actual = wrapper.find('button[name="sendButton"]').prop('onClick')
+
+    assert.equal(actual, actionSend, "render() must render a sendButton with correct onClick prop")
+  })
+
+  it('absence of a cancelButton if actionCancel is not passed', () => {
+    const actionCancel = stub(),
+      wrapper = renderWithDefault();
+
+    const actual = wrapper.find('button[name="cancelButton"]').length
+    const expected = 0
+
+    assert.equal(actual, expected, "render() must not have a cancel button if cancel action is passed")
+
+  })
+
+  it("rendering of a cancelButton with correct params", () => {
+    const actionCancel = stub(),
+      wrapper = renderWithDefault({
+        actionCancel
+      }),
+      actual = wrapper.find('button[name="cancelButton"]').prop('onClick')
+
+    assert.equal(actual, actionCancel, "render() must render a cancelButton with correct onClick prop")
   })
 
 })
