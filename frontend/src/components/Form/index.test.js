@@ -124,13 +124,11 @@ describe('Form', () => {
   })
 
   it("rendering of a sendButton with correct params", () => {
-    const actionSend = stub(),
-      wrapper = renderWithDefault({
-        actionSend
-      }),
+    const wrapper = renderWithDefault(),
+      handleActionSend = wrapper.instance().handleActionSend,
       actual = wrapper.find('button[name="sendButton"]').prop('onClick')
 
-    assert.equal(actual, actionSend, "render() must render a sendButton with correct onClick prop")
+    assert.equal(actual, handleActionSend, "render() must render a sendButton with correct onClick prop")
   })
 
   it('absence of a cancelButton if actionCancel is not passed', () => {
@@ -152,6 +150,25 @@ describe('Form', () => {
       actual = wrapper.find('button[name="cancelButton"]').prop('onClick')
 
     assert.equal(actual, actionCancel, "render() must render a cancelButton with correct onClick prop")
+  })
+
+  it('calling of actionSend with correct params by handleActionSend', async () => {
+    const actionSend = stub(),
+      wrapper = renderWithDefault({
+        actionSend
+      }),
+      handleActionSend = wrapper.instance().handleActionSend,
+      formData = {
+        foo: 'bar',
+        baz: 'zoo'
+      }
+
+    await wrapper.setState({ formData })
+
+    handleActionSend();
+
+    sinonAssert.calledWith(actionSend, formData)
+
   })
 
 })

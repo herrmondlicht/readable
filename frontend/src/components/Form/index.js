@@ -18,23 +18,30 @@ export const createForm = React => {
       }))
     }
 
+    handleActionSend = () =>
+      this.props.actionSend(this.state.formData)
+
     clearForm = () => this.setState({
       formData: {}
     })
 
     render() {
       const { Component, componentProps, actionCancel, actionSend } = this.props,
-      {formData} = this.state
+        { formData } = this.state
       return (
         <div className="form-container">
           <div className="form-container__content">
             <Component {...componentProps} formData={formData} updateFormData={this.updateFormData} clearForm={this.clearForm} />
           </div>
           <div className="form-container__bottom">
-            <button name="sendButton" onClick={actionSend} />
+            <button name="sendButton" onClick={this.handleActionSend}>
+              Send
+            </button>
             {
               actionCancel &&
-              <button name="cancelButton" onClick={actionCancel} />
+              <button name="cancelButton" onClick={actionCancel} >
+                Cancel
+              </button>
             }
           </div>
         </div>
