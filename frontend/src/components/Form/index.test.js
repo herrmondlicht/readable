@@ -9,6 +9,7 @@ describe('Form', () => {
     renderWithDefault = (props) => shallow(Form).withProps({
       Component: () => <div></div>,
       actionSend: stub(),
+      clearForm: stub(),
       ...props
     })
 
@@ -152,22 +153,26 @@ describe('Form', () => {
     assert.equal(actual, actionCancel, "render() must render a cancelButton with correct onClick prop")
   })
 
-  it('calling of actionSend with correct params by handleActionSend', async () => {
+  it('calling of clearForm and actionSend with correct params by handleActionSend', async () => {
     const actionSend = stub(),
+      clearForm = stub(),
       wrapper = renderWithDefault({
-        actionSend
+        actionSend,
+        clearForm
       }),
       handleActionSend = wrapper.instance().handleActionSend,
       formData = {
         foo: 'bar',
         baz: 'zoo'
       }
+    actionSend.resolves({ success: true })
 
     await wrapper.setState({ formData })
 
-    handleActionSend();
+    await handleActionSend();
 
     sinonAssert.calledWith(actionSend, formData)
+    sinonAssert.called(clearForm)
 
   })
 

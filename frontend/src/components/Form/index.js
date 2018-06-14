@@ -20,13 +20,14 @@ export const createForm = React => {
 
     handleActionSend = () =>
       this.props.actionSend(this.state.formData)
+        .then(() => this.props.clearForm())
 
     clearForm = () => this.setState({
       formData: {}
     })
 
     render() {
-      const { Component, componentProps, actionCancel, actionSend } = this.props,
+      const { Component, componentProps, actionCancel } = this.props,
         { formData } = this.state
       return (
         <div className="form-container">
