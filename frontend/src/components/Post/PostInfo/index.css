@@ -10,7 +10,6 @@
 .post-info__container {
   width: 100%;
   height: 100%;
-  padding: 0px 10px 10px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +29,7 @@
 
 .post-info__container_indicator {
   margin: 0 5px 0 5px;
+  width: 40%;
   text-align: center
 }
 
