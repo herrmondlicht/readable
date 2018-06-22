@@ -1,4 +1,4 @@
-import actions, { POST_COMMENT } from '.';
+import actions, { POST_COMMENT, MAKE_COMMENT_VOTE } from '.';
 import { assert } from 'chai';
 
 describe('Redux Actions', () => {
@@ -17,7 +17,23 @@ describe('Redux Actions', () => {
         type: POST_COMMENT,
         ...commentObject
       }
-
-    assert.deepEqual(actual, expected, 'postComment Action must retrieve the expected object')
+    assert.deepEqual(actual, expected, 'postComment Action must return the expected object')
   })
+
+
+  it('return from voteComment', () => {
+    const voteCommentObject = {
+      id: 'comment.id',
+      option: 'upVote'
+    },
+      { makeCommentVote } = actions,
+      actual = makeCommentVote(voteCommentObject),
+      expected = {
+        type: MAKE_COMMENT_VOTE,
+        ...voteCommentObject
+      }
+    assert.deepEqual(actual, expected, 'postComment Action must return the expected object')
+  })
+
+
 })
