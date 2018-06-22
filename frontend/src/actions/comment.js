@@ -1,8 +1,8 @@
-export const POST_COMMENT = 'POST_COMMENT'
+export const CREATE_COMMENT = 'CREATE_COMMENT'
 export const MAKE_COMMENT_VOTE = 'MAKE_VOTE'
 
-const postComment = (commentObject) => ({
-  type: POST_COMMENT,
+const createComment = (commentObject) => ({
+  type: CREATE_COMMENT,
   id: commentObject.id,
   timestamp: commentObject.timestamp,
   body: commentObject.body,
@@ -18,6 +18,6 @@ const makeCommentVote = ({ id, option }) => ({
 
 
 export default {
-  postComment,
+  createComment,
   makeCommentVote
 }

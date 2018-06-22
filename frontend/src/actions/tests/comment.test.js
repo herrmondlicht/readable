@@ -1,9 +1,9 @@
-import actions, { POST_COMMENT, MAKE_COMMENT_VOTE } from '.';
+import actions, { CREATE_COMMENT, MAKE_COMMENT_VOTE } from '../comment';
 import { assert } from 'chai';
 
 describe('Redux Actions', () => {
 
-  it('return from postComment', () => {
+  it('return from createComment', () => {
     const commentObject = {
       id: 'comment.id',
       timestamp: 1467166872634,
@@ -11,13 +11,13 @@ describe('Redux Actions', () => {
       author: 'comment.author',
       parentId: 'comment.parentId',
     },
-      { postComment } = actions,
-      actual = postComment(commentObject),
+      { createComment } = actions,
+      actual = createComment(commentObject),
       expected = {
-        type: POST_COMMENT,
+        type: CREATE_COMMENT,
         ...commentObject
       }
-    assert.deepEqual(actual, expected, 'postComment Action must return the expected object')
+    assert.deepEqual(actual, expected, 'createComment Action must return the expected object')
   })
 
 
@@ -32,7 +32,7 @@ describe('Redux Actions', () => {
         type: MAKE_COMMENT_VOTE,
         ...voteCommentObject
       }
-    assert.deepEqual(actual, expected, 'postComment Action must return the expected object')
+    assert.deepEqual(actual, expected, 'createComment Action must return the expected object')
   })
 
 
